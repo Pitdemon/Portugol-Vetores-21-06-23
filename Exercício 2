@@ -1,0 +1,32 @@
+/*2)Carregar uma lista com 15 convidados e depois pedir para o usuário digitar o nome de uma pessoa 
+e verificar se esta na lista. Melhorar o sistema e fazer um loop perguntando se deseja verificar outro 
+convidado, no final quando não desejar mais verificar os convidados mostrar quantos convidados estavam na lista.*/
+
+programa {
+  inclua biblioteca Util --> u
+  funcao inicio() {
+    inteiro tamanho
+    cadeia nome
+    cadeia convidados[] = {"Kleiton", "Matheus Silva", "Guilherme", "Vitória", "Matheus Pererira", "Luis", "Mikael", "Douglas", 
+      "Bruno", "João Pedro", "Igor", "Beatriz", "Matheus dos Santos", "João Gabriel", "Vinicius"}
+     logico temNaLista = falso
+
+    tamanho = u.numero_elementos(convidados)
+    escreva("Digite o nome do convidado! ")
+    leia(nome)
+
+    para(inteiro i = 0; i < tamanho; i++){
+      se(nome == convidados[i]){
+        temNaLista = verdadeiro
+        pare
+      }
+    }
+
+    se(temNaLista){
+      escreva(nome, " seja bem vindo!!")
+    }senao{
+      escreva(nome, " sai fora bicão!")
+    }
+
+  }
+}
