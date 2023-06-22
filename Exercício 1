@@ -1,0 +1,45 @@
+/*1) Gerar 50 números de 1 a 100 e colocar em uma lista. Não pode repetir. Depois de ter gerados os 50 números,
+ depois de criar a lista com 50 números criar outro loop para gerar um número de 1 a 100 para verifica se o número
+  esta na lista. Mostrar a mensagem o número está na lista ou não está na lista.*/
+
+programa {
+  inclua biblioteca Util --> u
+  funcao inicio() {
+    inteiro numeros[50], numero
+    logico temNaLista
+
+    para(inteiro i = 0; i < 50; i++){
+      temNaLista = falso
+      numero = u.sorteia(1,100)
+      para(inteiro y = 0; y < 50; y++){
+        se(numero == numeros[y]){
+          temNaLista = verdadeiro
+          i--
+          pare
+        }
+      }
+      se(temNaLista == falso){
+        numeros[i] = numero
+      }
+    }
+
+    para(inteiro i = 0; i < 50; i++){
+      escreva(numeros[i], " ")
+    }
+
+    numero = u.sorteia(1,100)
+    para(inteiro i = 0; i < 50; i++){
+      se(numeros[i] == numero){
+        temNaLista = verdadeiro
+        pare
+      }
+    }
+
+    se(temNaLista){
+      escreva("\n", numero, " ésta na lista")
+    }senao{
+      escreva("\n", numero, " não está na lista")
+    }
+    
+  }
+}
