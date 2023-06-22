@@ -6,15 +6,17 @@ programa {
   inclua biblioteca Util --> u
   funcao inicio() {
     inteiro tamanho
-    cadeia nome
+    cadeia nome, opcao
     cadeia convidados[] = {"Kleiton", "Matheus Silva", "Guilherme", "Vitória", "Matheus Pererira", "Luis", "Mikael", "Douglas", 
       "Bruno", "João Pedro", "Igor", "Beatriz", "Matheus dos Santos", "João Gabriel", "Vinicius"}
      logico temNaLista = falso
 
     tamanho = u.numero_elementos(convidados)
+
+    faca{
+      temNaLista = falso
     escreva("Digite o nome do convidado! ")
     leia(nome)
-
     para(inteiro i = 0; i < tamanho; i++){
       se(nome == convidados[i]){
         temNaLista = verdadeiro
@@ -27,6 +29,9 @@ programa {
     }senao{
       escreva(nome, " sai fora bicão!")
     }
+    escreva("Deseja continuar? \n(s)Sim \n(n)Não ")
+    leia(opcao)
+  }enquanto(opcao == "s")
 
   }
 }
