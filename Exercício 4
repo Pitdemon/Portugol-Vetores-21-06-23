@@ -1,0 +1,55 @@
+/*4)Criar duas lista de tamanho 5. Uma para nome do produto de informática e outro para os preços dos produtos. 
+Pedir para o usuários preencher com escreva e leia. Depois de preenchida mostrar um menu com as seguintes opções:
+(1)Total dos preços
+(2)Pesquisar produto por nome
+(3)Pesquisar produto com preços acima de R$100,00
+(4)Pesquisar produto com preços até R$100,00
+(5)Sair*/
+
+programa {
+  inclua biblioteca Texto --> txt
+  funcao inicio() {
+    inteiro opcao
+    cadeia produtos[] = {"Mouse Logitec", "Teclado Wooting", "HD Toshiba", "Monitor 19 AOC", "Headset Hyperx"}
+    real precos[] = {99.90, 960.00, 250.00, 1500.00, 360.00}, totalProduto = 0
+
+    faca{
+      escreva("\nFaça uma escolha a baixo: ",
+      "\n(1)Total dos preços",
+      "\n(2)Pesquisar produto por nome",
+      "\n(3)Pesquisar produto com preços acima de R$100,00",
+      "\n(4)Pesquisar produto com preços até R$100,00",
+      "\n(5)Sair\n")
+      leia(opcao)
+
+      escolha(opcao){
+        caso 1 :
+          para(inteiro i = 0; i < 5; i++){
+            escreva(produtos[i], " R$", precos[i], "\n")
+            totalProduto += precos[i]
+          } 
+          escreva("Total dos produtos: ", totalProduto, "\n")
+        pare
+
+        caso 2 :
+          cadeia nomeProduto, produto
+          escreva("Digite o nome do produto: ")
+          leia(nomeProduto)
+          
+          para(inteiro i = 0; i < 5; i++){
+            produto = txt.caixa_baixa(produtos[i])
+            nomeProduto = txt.caixa_baixa(nomeProduto)
+
+            se(txt.posicao_texto(nomeProduto, produto, 0) >= 0){
+              escreva(produtos[i], " ")
+            }
+          }
+          escreva("\n")
+        pare
+      }
+      
+
+    }enquanto(opcao != 5)
+
+  }
+}
