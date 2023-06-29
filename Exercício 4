@@ -24,6 +24,7 @@ programa {
 
       escolha(opcao){
         caso 1 :
+        totalProduto = 0
           para(inteiro i = 0; i < 5; i++){
             escreva(produtos[i], " R$", precos[i], "\n")
             totalProduto += precos[i]
