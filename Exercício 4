@@ -41,11 +41,30 @@ programa {
             nomeProduto = txt.caixa_baixa(nomeProduto)
 
             se(txt.posicao_texto(nomeProduto, produto, 0) >= 0){
-              escreva(produtos[i], " ")
+              escreva(produtos[i], " R$", precos[i])
             }
           }
           escreva("\n")
         pare
+
+        caso 3 :
+          para(inteiro i = 0; i < 5; i++){
+            se(precos[i] > 100){
+              escreva("Produto: ", produtos[i], " R$", precos[i], ".\n")
+            }
+          }
+
+        pare
+
+        caso 4 :
+          para(inteiro i = 0; i < 5; i++){
+            se(precos[i] <= 100){
+              escreva("Produto: ", produtos[i], " R$", precos[i], "\n")
+            }
+          }
+
+        pare
+
       }
       
 
